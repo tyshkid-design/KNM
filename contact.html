@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us – KNM Law Associates LLP | Kiambu Road, Nairobi</title>
+  <meta name="description" content="Contact KNM Law Associates LLP along Kiambu Road, Nairobi. Book a legal consultation, call us, or visit our offices. Mon–Fri 8am–4pm, Sat 8am–11am." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── CONTACT PAGE EXTRAS ── */
+    .hours-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 14px;
+      background: #f5f7fa;
+      border-radius: 8px;
+      font-family: Arial, sans-serif;
+      font-size: 13.5px;
+    }
+
+    .hours-row .day {
+      color: #1a2744;
+      font-weight: 600;
+    }
+
+    .hours-row .time {
+      color: #b8960c;
+      font-weight: 700;
+    }
+
+    .hours-row.closed .time {
+      color: #c0392b;
+    }
+
+    .map-wrapper {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #e0e6f0;
+      box-shadow: 0 12px 40px rgba(26, 39, 68, 0.08);
+      margin-top: 60px;
+    }
+
+    .map-wrapper iframe {
+      display: block;
+      width: 100%;
+      height: 420px;
+      border: none;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 50px;
+    }
+
+    .faq-item {
+      background: #ffffff;
+      border: 1px solid #e8ecf4;
+      border-radius: 14px;
+      padding: 28px;
+      transition: all 0.3s;
+      border-left: 4px solid transparent;
+    }
+
+    .faq-item:hover {
+      border-left-color: #b8960c;
+      box-shadow: 0 10px 30px rgba(26, 39, 68, 0.08);
+    }
+
+    .faq-item h4 {
+      font-size: 1rem;
+      margin-bottom: 10px;
+      color: #1a2744;
+    }
+
+    .faq-item p {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      color: #5a6a8b;
+      line-height: 1.7;
+    }
+
+    .directions-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .dir-step {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .dir-num {
+      width: 32px;
+      height: 32px;
+      background: #b8960c;
+      color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .dir-text {
+      font-family: Arial, sans-serif;
+      font-size: 14.5px;
+      color: #3a4a6b;
+      line-height: 1.6;
+      padding-top: 4px;
+    }
+
+    .appointment-types {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .appt-type {
+      border: 2px solid #e0e6f0;
+      border-radius: 10px;
+      padding: 16px;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s;
+      font-family: Arial, sans-serif;
+    }
+
+    .appt-type:hover,
+    .appt-type.selected {
+      border-color: #b8960c;
+      background: #fffbf0;
+    }
+
+    .appt-type .appt-icon {
+      font-size: 1.6rem;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .appt-type .appt-label {
+      font-size: 13px;
+      font-weight: 700;
+      color: #1a2744;
+    }
+
+    .form-success {
+      display: none;
+      background: #f0fff8;
+      border: 1px solid #2d7a4f;
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .form-success.show {
+      display: block;
+    }
+
+    .form-success h4 {
+      color: #2d7a4f;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+
+    .form-success p {
+      font-family: Arial, sans-serif;
+      font-size: 14.5px;
+      color: #3a4a6b;
+    }
+
+    @media (max-width: 768px) {
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .appointment-types {
+        grid-template-columns: 1fr;
+      }
+
+      .hours-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-left">
+        <a href="https://maps.google.com/?q=High+View+Plaza+Kiambu+Road" target="_blank">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="#b8960c"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          High View Plaza, Kiambu Road, 1st Floor
+        </a>
+        <a href="mailto:info@knmlawassociates.co.ke">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="#b8960c"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          info@knmlawassociates.co.ke
+        </a>
+      </div>
+      <div class="topbar-right">
+        <a href="tel:+254711394440">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="#b8960c"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          +254 711 394 440
+        </a>
+        <span style="color:#5a6a8b">|</span>
+        <a href="#" style="color:#c8b06c">Mon–Fri: 8am – 4pm &nbsp;|&nbsp; Sat: 8am – 11am</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="https://www.knmlawassociates.co.ke/wp-content/uploads/2020/10/Knm-Law-Logo-All.png" alt="KNM Law Associates" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">The Firm</a></li>
+        <li>
+          <a href="practice-areas.html">Practice Areas ▾</a>
+          <ul class="dropdown">
+            <li><a href="practice-areas.html#employment">Employment Law</a></li>
+            <li><a href="practice-areas.html#competition">Competition Law</a></li>
+            <li><a href="practice-areas.html#realestate">Real Estate &amp; Conveyancing</a></li>
+            <li><a href="practice-areas.html#ip">Intellectual Property Law</a></li>
+            <li><a href="practice-areas.html#litigation">Litigation &amp; Dispute Resolution</a></li>
+            <li><a href="practice-areas.html#commercial">Commercial Law</a></li>
+            <li><a href="practice-areas.html#family">Family Law</a></li>
+            <li><a href="practice-areas.html#corporate">Corporate &amp; Company Secretarial</a></li>
+          </ul>
+        </li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="contact.html" class="active">Contact Us</a></li>
+        <li><a href="contact.html" class="nav-cta">Book Appointment</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">The Firm</a>
+      <a href="practice-areas.html">Practice Areas</a>
+      <a href="practice-areas.html#employment" class="sub">Employment Law</a>
+      <a href="practice-areas.html#competition" class="sub">Competition Law</a>
+      <a href="practice-areas.html#realestate" class="sub">Real Estate &amp; Conveyancing</a>
+      <a href="practice-areas.html#ip" class="sub">Intellectual Property</a>
+      <a href="practice-areas.html#litigation" class="sub">Litigation &amp; Dispute Resolution</a>
+      <a href="practice-areas.html#commercial" class="sub">Commercial Law</a>
+      <a href="practice-areas.html#family" class="sub">Family Law</a>
+      <a href="practice-areas.html#corporate" class="sub">Corporate &amp; Secretarial</a>
+      <a href="team.html">Team</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="contact.html" style="background:#b8960c;color:#fff;font-weight:700;">Book Appointment</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-content">
+      <div class="breadcrumb"><a href="index.html">Home</a> <span>›</span> <span>Contact Us</span></div>
+      <h1>Get in Touch</h1>
+      <div class="gold-bar"></div>
+      <p style="font-family:Arial,sans-serif;font-size:16px;color:#c8d4e8;margin-top:16px;max-width:560px;margin-left:auto;margin-right:auto;line-height:1.7;">We are ready to listen, advise, and act. Reach out for a confidential consultation with one of our experienced advocates.</p>
+    </div>
+  </div>
+
+  <!-- QUICK CONTACT STRIP -->
+  <div style="background:#ffffff;padding:0;border-bottom:2px solid #f0f4ff;">
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);">
+      <a href="tel:+254711394440" style="display:flex;align-items:center;gap:16px;padding:28px 36px;border-right:1px solid #f0f4ff;transition:background 0.2s;text-decoration:none;" onmouseover="this.style.background='#f5f7fa'" onmouseout="this.style.background='transparent'">
+        <div style="width:48px;height:48px;background:#1a2744;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="#b8960c"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        </div>
+        <div>
+          <div style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#b8960c;margin-bottom:3px;">Call Us</div>
+          <div style="font-family:Georgia,serif;font-size:1rem;font-weight:700;color:#1a2744;">+254 711 394 440</div>
+        </div>
+      </a>
+      <a href="mailto:info@knmlawassociates.co.ke" style="display:flex;align-items:center;gap:16px;padding:28px 36px;border-right:1px solid #f0f4ff;transition:background 0.2s;text-decoration:none;" onmouseover="this.style.background='#f5f7fa'" onmouseout="this.style.background='transparent'">
+        <div style="width:48px;height:48px;background:#1a2744;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="#b8960c"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </div>
+        <div>
+          <div style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#b8960c;margin-bottom:3px;">Email Us</div>
+          <div style="font-family:Georgia,serif;font-size:0.95rem;font-weight:700;color:#1a2744;">info@knmlawassociates.co.ke</div>
+        </div>
+      </a>
+      <a href="https://wa.me/254711394440" target="_blank" style="display:flex;align-items:center;gap:16px;padding:28px 36px;transition:background 0.2s;text-decoration:none;" onmouseover="this.style.background='#f5f7fa'" onmouseout="this.style.background='transparent'">
+        <div style="width:48px;height:48px;background:#25d366;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="#ffffff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.139.566 4.147 1.547 5.886L0 24l6.293-1.528C8.012 23.459 9.968 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.658-.498-5.189-1.367l-.371-.219-3.839.932.977-3.727-.24-.386C2.55 15.556 2 13.839 2 12 2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        </div>
+        <div>
+          <div style="font-family:Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#25d366;margin-bottom:3px;">WhatsApp</div>
+          <div style="font-family:Georgia,serif;font-size:1rem;font-weight:700;color:#1a2744;">Chat With Us Now</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- MAIN CONTACT SECTION -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- LEFT: Info -->
+        <div>
+          <span class="section-label reveal">Our Office</span>
+          <h2 class="section-title reveal">Visit Us Along Kiambu Road</h2>
+          <p class="reveal" style="margin-bottom:36px;">We are conveniently located at High View Plaza along Kiambu Road — easily accessible from Runda, Thindigua, Kasarani, Ridgeways, Muthaiga, Westlands, and Nairobi CBD.</p>
+
+          <div class="contact-info">
+            <div class="contact-item reveal">
+              <div class="contact-ico">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              </div>
+              <div>
+                <h4>Physical Address</h4>
+                <p>High View Plaza, Kiambu Road<br />1st Floor, Nairobi, Kenya</p>
+                <a href="https://maps.google.com/?q=High+View+Plaza+Kiambu+Road+Nairobi" target="_blank" style="font-family:Arial,sans-serif;font-size:13px;color:#b8960c;font-weight:700;display:inline-flex;align-items:center;gap:4px;margin-top:8px;">Get Directions →</a>
+              </div>
+            </div>
+
+            <div class="contact-item reveal">
+              <div class="contact-ico">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              </div>
+              <div>
+                <h4>Postal Address</h4>
+                <p>P.O Box 64858 – 00620<br />Nairobi, Kenya</p>
+              </div>
+            </div>
+
+            <div class="contact-item reveal">
+              <div class="contact-ico">
+                <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              </div>
+              <div>
+                <h4>Phone</h4>
+                <p><a href="tel:+254711394440">+254 711 394 440</a></p>
+              </div>
+            </div>
+
+            <div class="contact-item reveal">
+              <div class="contact-ico">
+                <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+              </div>
+              <div>
+                <h4>Office Hours</h4>
+                <div class="hours-grid" style="margin-top:10px;">
+                  <div class="hours-row">
+                    <span class="day">Monday</span>
+                    <span class="time">8:00am – 4:00pm</span>
+                  </div>
+                  <div class="hours-row">
+                    <span class="day">Tuesday</span>
+                    <span class="time">8:00am – 4:00pm</span>
+                  </div>
+                  <div class="hours-row">
+                    <span class="day">Wednesday</span>
+                    <span class="time">8:00am – 4:00pm</span>
+                  </div>
+                  <div class="hours-row">
+                    <span class="day">Thursday</span>
+                    <span class="time">8:00am – 4:00pm</span>
+                  </div>
+                  <div class="hours-row">
+                    <span class="day">Friday</span>
+                    <span class="time">8:00am – 4:00pm</span>
+                  </div>
+                  <div class="hours-row">
+                    <span class="day">Saturday</span>
+                    <span class="time">8:00am – 11:00am</span>
+                  </div>
+                  <div class="hours-row closed" style="grid-column:1/-1;">
+                    <span class="day">Sunday &amp; Public Holidays</span>
+                    <span class="time">Closed</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Directions -->
+          <div style="margin-top:40px;" class="reveal">
+            <h3 style="font-size:1.1rem;margin-bottom:16px;">How to Find Us</h3>
+            <div class="directions-steps">
+              <div class="dir-step">
+                <div class="dir-num">1</div>
+                <div class="dir-text">Travel along <strong>Kiambu Road</strong> heading towards Kiambu town from Nairobi.</div>
+              </div>
+              <div class="dir-step">
+                <div class="dir-num">2</div>
+                <div class="dir-text">Look for <strong>High View Plaza</strong> on your left, past the Thindigua junction.</div>
+              </div>
+              <div class="dir-step">
+                <div class="dir-num">3</div>
+                <div class="dir-text">Proceed to the <strong>1st Floor</strong> — KNM Law Associates LLP is clearly marked.</div>
+              </div>
+              <div class="dir-step">
+                <div class="dir-num">4</div>
+                <div class="dir-text">Ample <strong>parking</strong> is available within the plaza compound.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Form -->
+        <div class="reveal-right">
+          <div class="contact-form">
+            <h3>Book an Appointment</h3>
+            <p class="sub">Fill in the form and one of our advocates will reach out to confirm your consultation time.</p>
+
+            <!-- Appointment Type -->
+            <div style="margin-bottom:22px;">
+              <label style="display:block;font-family:Arial,sans-serif;font-size:13px;font-weight:700;color:#1a2744;margin-bottom:10px;text-transform:uppercase;letter-spacing:0.5px;">Consultation Type</label>
+              <div class="appointment-types">
+                <div class="appt-type selected" onclick="selectAppt(this)">
+                  <span class="appt-icon">🏛</span>
+                  <span class="appt-label">In-Office</span>
+                </div>
+                <div class="appt-type" onclick="selectAppt(this)">
+                  <span class="appt-icon">📞</span>
+                  <span class="appt-label">Phone Call</span>
+                </div>
+                <div class="appt-type" onclick="selectAppt(this)">
+                  <span class="appt-icon">💻</span>
+                  <span class="appt-label">Video Call</span>
+                </div>
+              </div>
+            </div>
+
+            <form id="contactForm" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="fname">First Name *</label>
+                  <input type="text" id="fname" name="fname" placeholder="e.g. John" required />
+                </div>
+                <div class="form-group">
+                  <label for="lname">Last Name *</label>
+                  <input type="text" id="lname" name="lname" placeholder="e.g. Kamau" required />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="email">Email Address *</label>
+                  <input type="email" id="email" name="email" placeholder="you@example.com" required />
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number *</label>
+                  <input type="tel" id="phone" name="phone" placeholder="+254 7XX XXX XXX" required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="practice">Area of Law *</label>
+                <select id="practice" name="practice" required>
+                  <option value="" disabled selected>Select a practice area…</option>
+                  <option value="employment">Employment &amp; Labour Law</option>
+                  <option value="competition">Competition Law</option>
+                  <option value="realestate">Real Estate &amp; Conveyancing</option>
+                  <option value="ip">Intellectual Property Law</option>
+                  <option value="litigation">Litigation &amp; Dispute Resolution</option>
+                  <option value="commercial">Commercial Law</option>
+                  <option value="family">Family &amp; Succession Law</option>
+                  <option value="corporate">Corporate &amp; Company Secretarial</option>
+                  <option value="other">Other / Not Sure</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="preferred-date">Preferred Date</label>
+                  <input type="date" id="preferred-date" name="preferred-date" />
+                </div>
+                <div class="form-group">
+                  <label for="preferred-time">Preferred Time</label>
+                  <select id="preferred-time" name="preferred-time">
+                    <option value="" disabled selected>Select a time…</option>
+                    <option>8:00am – 9:00am</option>
+                    <option>9:00am – 10:00am</option>
+                    <option>10:00am – 11:00am</option>
+                    <option>11:00am – 12:00pm</option>
+                    <option>1:00pm – 2:00pm</option>
+                    <option>2:00pm – 3:00pm</option>
+                    <option>3:00pm – 4:00pm</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Brief Description of Your Matter *</label>
+                <textarea id="message" name="message" rows="5" placeholder="Please briefly describe your legal matter so we can assign the most suitable advocate to assist you…" required></textarea>
+              </div>
+
+              <div class="form-group" style="display:flex;align-items:flex-start;gap:10px;margin-bottom:24px;">
+                <input type="checkbox" id="consent" name="consent" style="width:auto;margin-top:3px;accent-color:#b8960c;" required />
+                <label for="consent" style="font-family:Arial,sans-serif;font-size:13px;color:#5a6a8b;font-weight:400;text-transform:none;letter-spacing:0;cursor:pointer;">I agree that my information may be used to contact me regarding my enquiry. All information is treated confidentially.</label>
+              </div>
+
+              <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;font-size:16px;padding:16px;">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="flex-shrink:0;"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                Send Enquiry &amp; Book Appointment
+              </button>
+            </form>
+
+            <!-- Success state -->
+            <div class="form-success" id="formSuccess">
+              <div style="font-size:2.5rem;margin-bottom:12px;">✅</div>
+              <h4>Thank You — We Have Received Your Enquiry!</h4>
+              <p>One of our advocates will review your matter and contact you within one business day to confirm your appointment. Please check your email for a confirmation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAP -->
+      <div class="map-wrapper reveal">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.6937327836516!2d36.80741!3d-1.22345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f3f0a8e5f0001%3A0x0!2sHigh+View+Plaza%2C+Kiambu+Rd%2C+Nairobi!5e0!3m2!1sen!2ske!4v1620000000000!5m2!1sen!2ske"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="KNM Law Associates Location – High View Plaza, Kiambu Road, Nairobi">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="section" style="background:#f5f7fa;">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">FAQs</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-desc">Quick answers to questions our new clients commonly ask before their first consultation.</p>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-item reveal">
+          <h4>How do I book an appointment?</h4>
+          <p>You can book using the form on this page, call us on +254 711 394 440, email us at info@knmlawassociates.co.ke, or send us a WhatsApp message. We offer in-office, phone, and video consultations.</p>
+        </div>
+        <div class="faq-item reveal">
+          <h4>What should I bring to my first consultation?</h4>
+          <p>Bring any relevant documents, correspondence, contracts, or evidence related to your matter. Identification (national ID or passport) is also helpful. The more context you provide, the more effectively we can advise you.</p>
+        </div>
+        <div class="faq-item reveal">
+          <h4>Do you offer free initial consultations?</h4>
+          <p>Please contact our offices directly to enquire about consultation fees for your specific type of matter. We aim to be transparent about costs from the outset so you can make an informed decision.</p>
+        </div>
+        <div class="faq-item reveal">
+          <h4>Which areas do you serve?</h4>
+          <p>We serve clients across Kenya, with a particular focus on Kiambu County, Nairobi, Runda, Thindigua, Kasarani, Ridgeways, Muthaiga, Westlands, and Nairobi CBD. We can also assist clients remotely.</p>
+        </div>
+        <div class="faq-item reveal">
+          <h4>Can you handle urgent or emergency legal matters?</h4>
+          <p>Yes. If you have an urgent matter requiring an injunction, urgent court application, or immediate legal advice, please call us directly on +254 711 394 440 rather than emailing, and we will prioritise your matter.</p>
+        </div>
+        <div class="faq-item reveal">
+          <h4>How long does a typical legal matter take?</h4>
+          <p>Timelines vary depending on the nature and complexity of the matter — from a few days for a straightforward conveyancing transaction to several months for complex litigation. We will give you a realistic estimate during your consultation.</p>
+        </div>
+        <div class="faq-item reveal">
+          <h4>Is my consultation confidential?</h4>
+          <p>Absolutely. All communications between you and KNM Law Associates are protected by legal professional privilege and treated with the utmost confidentiality. We take client privacy extremely seriously.</p>
+        </div>
+        <div class="faq-item reveal">
+          <h4>Can you assist with matters outside Kenya?</h4>
+          <p>Our practice is focused on Kenyan law. However, we have professional networks and can refer clients to trusted counterpart firms for matters requiring expertise in other jurisdictions where appropriate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA BAND -->
+  <div class="cta-band">
+    <div class="container">
+      <h2 class="reveal">Ready to Take the First Step?</h2>
+      <p class="reveal">Our experienced advocates are ready to help you navigate your legal matter with confidence. Contact us today for a confidential consultation.</p>
+      <div class="cta-buttons reveal">
+        <a href="tel:+254711394440" class="btn btn-gold">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          Call +254 711 394 440
+        </a>
+        <a href="https://wa.me/254711394440" target="_blank" class="btn btn-outline" style="background:rgba(37,211,102,0.15);border-color:#25d366;color:#25d366;">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.139.566 4.147 1.547 5.886L0 24l6.293-1.528C8.012 23.459 9.968 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.658-.498-5.189-1.367l-.371-.219-3.839.932.977-3.727-.24-.386C2.55 15.556 2 13.839 2 12 2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          WhatsApp Us
+        </a>
+        <a href="mailto:info@knmlawassociates.co.ke" class="btn btn-outline">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          Send an Email
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="https://www.knmlawassociates.co.ke/wp-content/uploads/2020/10/Knm-Law-Logo-All.png" alt="KNM Law Associates" />
+        <p>A trusted full-service law firm along Kiambu Road offering practical, results-driven legal solutions to individuals, businesses, and institutions across Kenya.</p>
+        <div class="footer-social">
+          <a href="mailto:info@knmlawassociates.co.ke" title="Email"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+          <a href="tel:+254711394440" title="Call"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></a>
+          <a href="https://wa.me/254711394440" title="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.139.566 4.147 1.547 5.886L0 24l6.293-1.528C8.012 23.459 9.968 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.658-.498-5.189-1.367l-.371-.219-3.839.932.977-3.727-.24-.386C2.55 15.556 2 13.839 2 12 2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">The Firm</a></li>
+          <li><a href="practice-areas.html">Practice Areas</a></li>
+          <li><a href="team.html">Our Team</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="contact.html">Book Appointment</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Practice Areas</h4>
+        <ul>
+          <li><a href="practice-areas.html#employment">Employment Law</a></li>
+          <li><a href="practice-areas.html#competition">Competition Law</a></li>
+          <li><a href="practice-areas.html#realestate">Real Estate</a></li>
+          <li><a href="practice-areas.html#ip">Intellectual Property</a></li>
+          <li><a href="practice-areas.html#litigation">Litigation</a></li>
+          <li><a href="practice-areas.html#commercial">Commercial Law</a></li>
+          <li><a href="practice-areas.html#family">Family Law</a></li>
+          <li><a href="practice-areas.html#corporate">Corporate &amp; Secretarial</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          <span>High View Plaza, Kiambu Road, 1st Floor, Nairobi</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          <span><a href="tel:+254711394440">+254 711 394 440</a></span>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          <span><a href="mailto:info@knmlawassociates.co.ke">info@knmlawassociates.co.ke</a></span>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+          <span>Mon–Fri: 8:00am – 4:00pm<br />Saturday: 8:00am – 11:00am</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 KNM Law Associates LLP. All rights reserved.</p>
+      <p>P.O Box 64858 – 00620, Nairobi, Kenya</p>
+    </div>
+  </footer>
+
+  <button id="scrollTop" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+  </button>
+  <a class="wa-float" href="https://wa.me/254711394440" target="_blank" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.139.566 4.147 1.547 5.886L0 24l6.293-1.528C8.012 23.459 9.968 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.658-.498-5.189-1.367l-.371-.219-3.839.932.977-3.727-.24-.386C2.55 15.556 2 13.839 2 12 2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+  </a>
+
+  <script src="main.js"></script>
+  <script>
+    /* ── APPOINTMENT TYPE SELECTOR ── */
+    function selectAppt(el) {
+      document.querySelectorAll('.appt-type').forEach(function(a) {
+        a.classList.remove('selected');
+      });
+      el.classList.add('selected');
+    }
+
+    /* ── CONTACT FORM WITH SUCCESS STATE ── */
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const btn = this.querySelector('button[type="submit"]');
+      const originalHTML = btn.innerHTML;
+      btn.innerHTML = '<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg> Sending…';
+      btn.disabled = true;
+
+      setTimeout(function() {
+        document.getElementById('contactForm').style.display = 'none';
+        document.getElementById('formSuccess').classList.add('show');
+      }, 1600);
+    });
+  </script>
+</body>
+</html>
