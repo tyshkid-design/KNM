@@ -466,6 +466,7 @@ a {
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  text-align: center;
 }
 
 .practice-card::after {
@@ -498,7 +499,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
 }
 
 .practice-icon svg {
@@ -510,7 +511,6 @@ a {
 .practice-card h3 {
   font-size: 1.1rem;
   margin-bottom: 12px;
-  color: #1a2744;
 }
 
 .practice-card p {

@@ -16,18 +16,18 @@
       background: #f5f7fa;
     }
 
-    .team-detail-grid {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 360px 1fr;
-      gap: 70px;
-      align-items: start;
-    }
+.team-detail-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 50px;
+  align-items: start;
+}
 
-    .team-detail-grid.reversed {
-      grid-template-columns: 1fr 360px;
-    }
+.team-detail-grid.reversed {
+  grid-template-columns: 1fr 320px;
+}
 
     .team-detail-grid.reversed .team-profile-card {
       order: 2;
@@ -37,23 +37,21 @@
       order: 1;
     }
 
-    .team-profile-card {
-      background: #ffffff;
-      border-radius: 20px;
-      overflow: hidden;
-      border: 1px solid #e8ecf4;
-      box-shadow: 0 16px 50px rgba(26, 39, 68, 0.10);
-      position: sticky;
-      top: 100px;
-    }
+.team-profile-card {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #e8ecf4;
+  box-shadow: 0 16px 50px rgba(26, 39, 68, 0.10);
+}
 
-    .team-profile-card img {
-      width: 100%;
-      height: 360px;
-      object-fit: cover;
-      object-position: top center;
-      display: block;
-    }
+.team-profile-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
 
     .team-profile-info {
       padding: 28px;
@@ -236,8 +234,7 @@
       }
 
       .team-profile-card {
-        position: static;
-        max-width: 400px;
+        max-width: 100%;
       }
 
       .detail-grid-2 {
@@ -359,14 +356,21 @@
     </div>
   </div>
 
-  <!-- ── PARTNER 1: H.M. MURIUKI ── -->
-  <section class="team-detail-section" id="hellen">
-    <div class="team-detail-grid">
+  <!-- ── PARTNER 1: JAMES ── -->
+  <section class="team-detail-section" id="christine">
+    <div class="team-detail-grid reversed">
+      <!-- Detail Content -->
+      <div class="team-detail-content reveal-left">
+        <span class="section-label">Managing Partner</span>
+        <h2>James Ndung'u</h2>
+        <p>James Ndung'u is the Managing Partner of the firm. He guides our overall strategic growth and oversees the executive leadership team, including technology and operations. With years of elite legal experience, James ensures the firm delivers top-tier results for our clients.</p>
+      </div>
+
       <!-- Profile Card -->
-      <div class="team-profile-card reveal-left">
-        <img src="https://www.knmlawassociates.co.ke/wp-content/uploads/2020/10/knm-manager-hellen.jpg" alt="H.M. Muriuki – Managing Partner, J.N & Co Advocates" />
+      <div class="team-profile-card reveal-right">
+        <img src="images/james.png" alt="James Ndung'u – Managing Partner, J.N & Co Advocates" />
         <div class="team-profile-info">
-          <h3>H.M. Muriuki (Mrs)</h3>
+          <h3>James Ndung'u</h3>
           <span class="role">Managing Partner</span>
           <div class="location">
             <svg viewBox="0 0 24 24" width="14" height="14" fill="#b8960c"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
@@ -377,106 +381,25 @@
               <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
               (+254) 722 818932
             </a>
-            <a href="mailto:hkm@knmlawassociates.co.ke" class="email-link">
+            <a href="mailto:njuguna@jnnadvocates.co.ke" class="email-link">
               <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-              hkm@knmlawassociates.co.ke
+              njuguna@jnnadvocates.co.ke
             </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Detail Content -->
-      <div class="team-detail-content reveal-right">
-        <span class="section-label">Managing Partner</span>
-        <h2>H.M. Muriuki (Mrs)</h2>
-        <p>Hellen is an Advocate of the High Court of Kenya, having been admitted to the Bar in 1998, and a Certified Public Secretary. Her experience spans both private legal practice and in-house legal roles, as well as board secretarial work with major institutions.</p>
-        <p>Hellen holds a Bachelor's Degree in Law (LLB) from the University of Nairobi, a Masters in Corporate Law (LLM) from the University of South Africa (UNISA), and a Diploma from the Kenya School of Law. She has also undertaken specialised training in Human Resources.</p>
-        <p>As Managing Partner, Hellen oversees the day-to-day management of the firm while maintaining an active practice. She represents clients in court and advises on insurance and commercial transactions, company law, competition law, constitutional law, transaction advisory, and intellectual property — bringing depth, breadth, and strategic clarity to every matter she handles.</p>
-        <p>Her work with major financial institutions has encompassed due diligence exercises, securitisation transactions, preparation and registration of transfers, charges, mortgages, and chattel transfers. She has also led governance audit engagements and provided board secretarial support at the highest levels.</p>
-
-        <div class="expertise-tags">
-          <span class="expertise-tag">Commercial &amp; Corporate Law</span>
-          <span class="expertise-tag">Competition Law</span>
-          <span class="expertise-tag">Company Law</span>
-          <span class="expertise-tag">Intellectual Property</span>
-          <span class="expertise-tag">Insurance Transactions</span>
-          <span class="expertise-tag">Constitutional Law</span>
-          <span class="expertise-tag">Board Secretarial</span>
-          <span class="expertise-tag">Transaction Advisory</span>
-        </div>
-
-        <div class="detail-grid-2" style="margin-top:32px;">
-          <div class="detail-box">
-            <h4>Education</h4>
-            <ul>
-              <li>LLM (Corporate Law) – University of South Africa (UNISA)</li>
-              <li>LLB – University of Nairobi</li>
-              <li>Diploma – Kenya School of Law</li>
-              <li>Diploma in Human Resources</li>
-            </ul>
-          </div>
-          <div class="detail-box">
-            <h4>Memberships</h4>
-            <ul>
-              <li>Law Society of Kenya (LSK)</li>
-              <li>Institute of Certified Public Secretaries (ICPSK)</li>
-              <li>Institute of Directors (Kenya)</li>
-            </ul>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── PARTNER 2: CHRISTINE KAWIRA UNGU ── -->
-  <section class="team-detail-section" id="christine">
-    <div class="team-detail-grid reversed">
-      <!-- Detail Content -->
-      <div class="team-detail-content reveal-left">
-        <span class="section-label">Partner – Litigation</span>
-        <h2>Christine Kawira Ungu</h2>
-        <p>Christine is an Advocate of the High Court of Kenya, having been admitted to the Bar in 1999, and a Certified Public Secretary. Her professional journey encompasses private legal practice, in-house corporate legal work, and experience from the bench — giving her a uniquely well-rounded perspective on dispute resolution.</p>
-        <p>Christine holds a Bachelor of Laws (LLB) degree from the University of Nairobi and a Diploma from the Kenya School of Law. She is currently pursuing a Master of Business Administration in Strategy Management at Kenya Methodist University, deepening her commercial and strategic advisory capabilities.</p>
-        <p>As the partner in charge of litigation at J.N & Co Advocates, Christine leads the firm's contentious practice, representing clients in civil, commercial, constitutional, and land matters before the courts in Kiambu County, Nairobi, and beyond. She is known for her meticulous preparation, courtroom composure, and ability to achieve practical, client-centred outcomes.</p>
-        <p>Christine has also successfully represented clients in alternative dispute resolution (ADR) proceedings — including arbitration and mediation — securing favourable outcomes efficiently and cost-effectively.</p>
-
-        <div class="expertise-tags">
-          <span class="expertise-tag">Civil Litigation</span>
-          <span class="expertise-tag">Commercial Disputes</span>
-          <span class="expertise-tag">Constitutional Law</span>
-          <span class="expertise-tag">Land &amp; Property Disputes</span>
-          <span class="expertise-tag">Arbitration &amp; Mediation</span>
-          <span class="expertise-tag">Debt Recovery</span>
-          <span class="expertise-tag">Company Secretarial</span>
-          <span class="expertise-tag">Corporate Governance</span>
-        </div>
-
-        <div class="detail-grid-2" style="margin-top:32px;">
-          <div class="detail-box">
-            <h4>Education</h4>
-            <ul>
-              <li>MBA (Strategy Management) – Kenya Methodist University (In Progress)</li>
-              <li>LLB – University of Nairobi</li>
-              <li>Diploma – Kenya School of Law</li>
-            </ul>
-          </div>
-          <div class="detail-box">
-            <h4>Memberships</h4>
-            <ul>
-              <li>Law Society of Kenya (LSK)</li>
-              <li>Institute of Certified Public Secretaries (ICPSK)</li>
-              <li>East Africa Law Society (EALS)</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
+  <!-- ── PARTNER 2: KAREN ── -->
+  <section class="team-detail-section" id="hellen">
+    <div class="team-detail-grid">
       <!-- Profile Card -->
-      <div class="team-profile-card reveal-right">
-        <img src="https://www.knmlawassociates.co.ke/wp-content/uploads/2021/10/Knm-Law-Associate-Partner-Christine-Kawira-Ungu.jpeg" alt="Christine Kawira Ungu – Partner, J.N & Co Advocates" />
+      <div class="team-profile-card reveal-left">
+        <img src="images/karen.jpeg" alt="Karen Ndung'u – Digital and Publicity Officer, J.N & Co Advocates" />
         <div class="team-profile-info">
-          <h3>Christine Kawira Ungu</h3>
-          <span class="role">Partner – Litigation</span>
+          <h3>Karen Ndung'u</h3>
+          <span class="role">Digital and publicity officer</span>
           <div class="location">
             <svg viewBox="0 0 24 24" width="14" height="14" fill="#b8960c"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
             Nairobi, Kenya
@@ -492,6 +415,87 @@
             </a>
           </div>
         </div>
+      </div>
+
+      <!-- Detail Content -->
+      <div class="team-detail-content reveal-right">
+        <span class="section-label">Digital and publicity officer</span>
+        <h2>Karen Ndung'u</h2>
+        <p>Karen is currently pusuing Bachelor of Medicine and Bachelor of Surgery (MBChB) at Kenyatta University. I serve as the Digital and Publicity Officer at the firm, where I manage digital communications, public relations, and brand visibility. I also work as an editor, with a keen interest in content creation, media, and effective communication.</p>
+        
+
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PARTNER 3: PASCAL ── -->
+  <section class="team-detail-section" id="christine">
+    <div class="team-detail-grid reversed">
+      <!-- Detail Content -->
+      <div class="team-detail-content reveal-left">
+        <span class="section-label">Legal Intern</span>
+        <h2>Moses Pascal</h2>
+        <p>Moses Pascal is a young enthusiastic Bachelor of Laws (LL.B) Candidate skilled in legal research and drafting with a key interest in the fields of Intellectual Property Rights, Real Estate and Conveyancing, Banking and Finance, Commercial Law, Aviation Law and Alternative Dispute Resolution. His keen interest in Alternative Dispute Resolution led him to do a dissertation on Arbitration in the Kenyan Aviation Industry as a qualification for LL.B. </p>
+      </div>
+
+      <!-- Profile Card -->
+      <div class="team-profile-card reveal-right">
+        <img src="images/pascal.jpeg" alt="Moses Pascal – Legal Intern, J.N & Co Advocates" />
+        <div class="team-profile-info">
+          <h3>Moses Pascal</h3>
+          <span class="role">Legal Intern</span>
+          <div class="location">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="#b8960c"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            Nairobi, Kenya
+          </div>
+          <div class="profile-cta-links">
+            <a href="tel:+254722818932" class="call-link">
+              <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              (+254) 722 818932
+            </a>
+            <a href="mailto:mosesnpascal@gmail.com" class="email-link">
+              <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              mosesnpascal@gmail.com
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- ── PARTNER 4: Collins ── -->
+  <section class="team-detail-section" id="hellen">
+    <div class="team-detail-grid">
+      <!-- Profile Card -->
+      <div class="team-profile-card reveal-left">
+        <img src="images/collins.jpeg" alt="Karen Ndung'u – Digital and Publicity Officer, J.N & Co Advocates" />
+        <div class="team-profile-info">
+          <h3>Collins Mwangi</h3>
+          <span class="role">Lead CTO</span>
+          <div class="location">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="#b8960c"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            Nairobi, Kenya
+          </div>
+          <div class="profile-cta-links">
+            <a href="tel:+254794 153 677" class="call-link">
+              <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              (+254) 794 153 677
+            </a>
+            <a href="mailto:collins.memeyai@gmail.com" class="email-link">
+              <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              collins.memeyai@gmail.com
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Detail Content -->
+      <div class="team-detail-content reveal-right">
+        <span class="section-label">Lead CTO</span>
+        <h2>Collins Mwangi</h2>
+        <p>Collins is the founder/Ceo of Memeyai and also serves as the Lead Chief Technology Officer (CTO) at our firm. He directs our long-term technology strategy and oversees data infrastructure. Collins ensures our legal teams use secure, modern tech to deliver elite client service.</p>
       </div>
     </div>
   </section>
@@ -524,7 +528,7 @@
   <footer>
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="https://www.knmlawassociates.co.ke/wp-content/uploads/2020/10/Knm-Law-Logo-All.png" alt="J.N & Co Advocates" />
+        <img src="images/logo.jpg" alt="J.N & Co Advocates" />
         <p>A trusted full-service law firm along Thika Road offering practical, results-driven legal solutions to individuals, businesses, and institutions across Kenya.</p>
         <div class="footer-social">
           <a href="mailto:info@jnnadvocates.co.ke" title="Email"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
