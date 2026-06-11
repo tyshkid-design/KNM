@@ -1,5 +1,5 @@
 /* ============================================
-   KNM LAW ASSOCIATES – MAIN JS
+   J.N.NDUGU ADVOCATES – MAIN JS
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', function () {

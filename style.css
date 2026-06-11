@@ -1,5 +1,5 @@
 /* ============================================
-   KNM LAW ASSOCIATES – MODERN REDESIGN
+   J.N.NDUGU ADVOCATES – MODERN REDESIGN
    Colors: Navy #1a2744, Gold #b8960c, White #ffffff, Light #f5f7fa
    ============================================ */
 
@@ -108,6 +108,9 @@ a {
 .nav-logo img {
   height: 52px;
   width: auto;
+  background: #1a2744;
+  padding: 6px 10px;
+  border-radius: 8px;
 }
 
 .nav-links {
@@ -230,6 +233,9 @@ a {
   background: #ffffff;
   border-top: 2px solid #b8960c;
   padding: 16px 0;
+  max-height: calc(100vh - 75px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .mobile-menu.open {
@@ -956,7 +962,9 @@ footer {
   height: 50px;
   width: auto;
   margin-bottom: 18px;
-  filter: brightness(10);
+  background: #ffffff;
+  padding: 6px 10px;
+  border-radius: 8px;
 }
 
 .footer-brand p {
