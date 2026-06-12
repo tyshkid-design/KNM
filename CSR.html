@@ -1,0 +1,1924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSR – J.N & Co Advocates | Giving Back to the Community</title>
+  <meta name="description" content="J.N & Co Advocates is committed to community development through scholarships, a football academy, hikes & trips, mentorship programs, and legal internships." />
+
+  <style>
+    /* ============================================================
+       J.N & Co Advocates – CSR PAGE
+       Colors: Navy #1a2744 | Gold #b8960c | White #fff | Light #f5f7fa
+    ============================================================ */
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #1a2744;
+      background: #ffffff;
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    img { max-width: 100%; display: block; }
+
+    /* ── TOPBAR ── */
+    .topbar {
+      background: #1a2744;
+      padding: 8px 0;
+      font-size: 13px;
+    }
+    .topbar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .topbar a {
+      color: #c8b06c;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .topbar a:hover { color: #ffffff; }
+    .topbar-left, .topbar-right { display: flex; align-items: center; gap: 20px; }
+
+    /* ── NAVBAR ── */
+    .navbar {
+      background: #ffffff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 20px rgba(26,39,68,0.10);
+      transition: box-shadow 0.3s;
+    }
+    .navbar.scrolled { box-shadow: 0 4px 30px rgba(26,39,68,0.18); }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 75px;
+    }
+    .nav-logo img { height: 52px; width: auto; background: #1a2744; padding: 6px 10px; border-radius: 8px; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      list-style: none;
+    }
+    .nav-links > li { position: relative; }
+    .nav-links > li > a {
+      display: block;
+      padding: 10px 13px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #1a2744;
+      border-radius: 6px;
+      white-space: nowrap;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-links > li > a:hover,
+    .nav-links > li > a.active {
+      background: #f0f4ff;
+      color: #b8960c;
+    }
+
+    /* dropdown */
+    .dropdown {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      background: #ffffff;
+      border: 1px solid #e8ecf4;
+      border-radius: 10px;
+      padding: 8px 0;
+      min-width: 220px;
+      box-shadow: 0 12px 40px rgba(26,39,68,0.14);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px);
+      transition: all 0.25s ease;
+      z-index: 999;
+      list-style: none;
+    }
+    .nav-links > li:hover .dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .dropdown li a {
+      display: block;
+      padding: 10px 20px;
+      font-size: 13.5px;
+      color: #3a4a6b;
+      transition: background 0.2s, color 0.2s;
+    }
+    .dropdown li a:hover { background: #f5f7fa; color: #b8960c; }
+    .dropdown li a::before { content: '→ '; opacity: 0; transition: opacity 0.2s; }
+    .dropdown li a:hover::before { opacity: 1; }
+
+    .nav-cta {
+      background: #b8960c !important;
+      color: #ffffff !important;
+      border-radius: 8px !important;
+      padding: 10px 20px !important;
+    }
+    .nav-cta:hover { background: #9a7a08 !important; }
+
+    /* hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 6px;
+      background: none;
+      border: none;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #1a2744;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    .mobile-menu {
+      display: none;
+      background: #ffffff;
+      border-top: 2px solid #b8960c;
+      padding: 16px 0;
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a {
+      display: block;
+      padding: 12px 40px;
+      font-size: 14px;
+      color: #1a2744;
+      border-bottom: 1px solid #f0f0f0;
+      transition: background 0.2s, color 0.2s;
+    }
+    .mobile-menu a:hover { background: #f5f7fa; color: #b8960c; }
+    .mobile-menu a.sub { padding-left: 60px; font-size: 13px; color: #3a4a6b; }
+
+    /* ── PAGE HERO ── */
+    .csr-hero {
+      background: linear-gradient(135deg, #0d1730 0%, #1a2744 55%, #1e3060 100%);
+      min-height: 78vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .csr-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: url('images/csr-hero.jpg') center/cover no-repeat;
+      opacity: 0.07;
+    }
+    .csr-hero canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+    .csr-hero-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .csr-hero-left .eyebrow {
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #b8960c;
+      font-weight: 700;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .csr-hero-left .eyebrow::before {
+      content: '';
+      display: block;
+      width: 30px;
+      height: 2px;
+      background: #b8960c;
+    }
+    .csr-hero-left h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      color: #ffffff;
+      line-height: 1.15;
+      margin-bottom: 22px;
+    }
+    .csr-hero-left h1 em { font-style: normal; color: #b8960c; }
+    .csr-hero-left p {
+      font-size: 17px;
+      color: #b0c0d8;
+      line-height: 1.8;
+      margin-bottom: 36px;
+      max-width: 500px;
+    }
+    .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+
+    /* hero right: impact tiles */
+    .csr-hero-right {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .impact-tile {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px;
+      padding: 24px 18px;
+      backdrop-filter: blur(8px);
+      text-align: center;
+      transition: background 0.3s, border-color 0.3s;
+    }
+    .impact-tile:hover {
+      background: rgba(184,150,12,0.13);
+      border-color: rgba(184,150,12,0.45);
+    }
+    .impact-tile:nth-child(2) { margin-top: 22px; }
+    .impact-tile:nth-child(4) { margin-top: -22px; }
+    .impact-tile .tile-icon { font-size: 2rem; margin-bottom: 10px; display: block; }
+    .impact-tile h4 { font-family: Georgia, serif; font-size: 0.95rem; color: #ffffff; margin-bottom: 4px; }
+    .impact-tile p { font-size: 12.5px; color: #8a9abc; line-height: 1.5; }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 28px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      transition: all 0.25s ease;
+    }
+    .btn-gold { background: #b8960c; color: #ffffff; }
+    .btn-gold:hover {
+      background: #9a7a08;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(184,150,12,0.35);
+    }
+    .btn-outline {
+      background: transparent;
+      color: #ffffff;
+      border: 2px solid rgba(255,255,255,0.55);
+    }
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: #ffffff;
+      transform: translateY(-2px);
+    }
+    .btn-outline-gold {
+      background: transparent;
+      color: #b8960c;
+      border: 2px solid #b8960c;
+    }
+    .btn-outline-gold:hover { background: #b8960c; color: #ffffff; }
+    .btn-navy { background: #1a2744; color: #ffffff; }
+    .btn-navy:hover { background: #243660; transform: translateY(-2px); }
+
+    /* ── STAT STRIP ── */
+    .stat-strip {
+      background: #1a2744;
+      padding: 56px 40px;
+    }
+    .stat-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 30px;
+      text-align: center;
+    }
+    .stat-item .num {
+      font-family: Georgia, serif;
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: #b8960c;
+      line-height: 1;
+    }
+    .stat-item .lbl {
+      font-size: 13px;
+      color: #c8d4e8;
+      margin-top: 8px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* ── SECTION COMMONS ── */
+    .section { padding: 90px 40px; }
+    .section-alt { background: #f5f7fa; }
+    .container { max-width: 1200px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #b8960c;
+      display: block;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: Georgia, serif;
+      font-size: clamp(1.75rem, 2.8vw, 2.4rem);
+      color: #1a2744;
+      line-height: 1.25;
+      margin-bottom: 18px;
+    }
+    .section-desc {
+      font-size: 15.5px;
+      color: #5a6a8b;
+      max-width: 600px;
+      line-height: 1.8;
+    }
+    .text-center { text-align: center; }
+    .text-center .section-desc { margin: 0 auto; }
+
+    /* ── BREADCRUMB ── */
+    .page-hero-bar {
+      background: linear-gradient(135deg, #1a2744, #243660);
+      padding: 30px 40px;
+      text-align: center;
+    }
+    .breadcrumb {
+      font-size: 14px;
+      color: #c8b06c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .breadcrumb a { color: #c8b06c; transition: color 0.2s; }
+    .breadcrumb a:hover { color: #ffffff; }
+
+    /* ── PROGRAM ANCHOR TABS ── */
+    .prog-tabs {
+      background: #ffffff;
+      border-bottom: 2px solid #f0f4ff;
+      position: sticky;
+      top: 75px;
+      z-index: 99;
+      overflow-x: auto;
+    }
+    .prog-tabs-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      gap: 4px;
+      min-width: max-content;
+    }
+    .prog-tabs-inner a {
+      display: block;
+      padding: 14px 20px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #3a4a6b;
+      white-space: nowrap;
+      border-bottom: 3px solid transparent;
+      transition: all 0.2s;
+    }
+    .prog-tabs-inner a:hover {
+      color: #b8960c;
+      border-bottom-color: #b8960c;
+    }
+
+    /* ── PROGRAM SECTIONS ── */
+    /* shared two-col layout */
+    .prog-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+    .prog-grid.rev .prog-visual { order: -1; }
+
+    .prog-visual {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+    }
+    .prog-visual img {
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+      display: block;
+      border-radius: 18px;
+    }
+    .prog-badge {
+      position: absolute;
+      bottom: 24px;
+      right: 24px;
+      background: #b8960c;
+      color: #ffffff;
+      padding: 14px 20px;
+      border-radius: 12px;
+      font-family: Georgia, serif;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(184,150,12,0.4);
+    }
+    .prog-badge strong { display: block; font-size: 1.9rem; line-height: 1; }
+    .prog-badge span { font-size: 12px; opacity: 0.9; }
+
+    /* prog text side */
+    .prog-text .highlights {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin: 28px 0;
+    }
+    .highlight-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: #f5f7fa;
+      padding: 16px 18px;
+      border-radius: 10px;
+      border-left: 4px solid #b8960c;
+      transition: background 0.2s;
+    }
+    .highlight-item:hover { background: #eef1f8; }
+    .hi-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      width: 36px;
+      text-align: center;
+    }
+    .hi-body h4 { font-family: Georgia, serif; font-size: 0.95rem; margin-bottom: 3px; }
+    .hi-body p { font-size: 13.5px; color: #5a6a8b; line-height: 1.6; }
+
+    /* criteria / eligibility cards */
+    .criteria-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .criteria-card {
+      background: #ffffff;
+      border: 1px solid #e8ecf4;
+      border-radius: 12px;
+      padding: 22px 18px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    .criteria-card:hover {
+      border-color: #b8960c;
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(26,39,68,0.09);
+    }
+    .criteria-card .cc-icon { font-size: 2rem; margin-bottom: 10px; display: block; }
+    .criteria-card h4 { font-family: Georgia, serif; font-size: 0.95rem; margin-bottom: 6px; color: #1a2744; }
+    .criteria-card p { font-size: 13px; color: #5a6a8b; line-height: 1.6; }
+
+    /* ── SCHOLARSHIP ── */
+
+    /* ── FOOTBALL ACADEMY ── */
+    .team-positions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .position-tag {
+      font-size: 13px;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 24px;
+      background: #1a2744;
+      color: #c8b06c;
+    }
+
+    /* match results ticker */
+    .results-ticker {
+      background: #1a2744;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-top: 24px;
+    }
+    .results-ticker h4 {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #b8960c;
+      margin-bottom: 14px;
+    }
+    .result-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .result-row:last-child { border-bottom: none; }
+    .result-row .teams { font-size: 14px; color: #c8d4e8; }
+    .result-row .score {
+      font-family: Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: #b8960c;
+    }
+    .result-row .result-label {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+    .result-label.win { background: rgba(45,122,79,0.25); color: #4caf7d; }
+    .result-label.draw { background: rgba(184,150,12,0.2); color: #b8960c; }
+
+    /* ── HIKES & TRIPS ── */
+    .trips-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .trip-card {
+      border-radius: 14px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      background: #1a2744;
+    }
+    .trip-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: transform 0.4s ease, opacity 0.3s;
+      opacity: 0.88;
+    }
+    .trip-card:hover img { transform: scale(1.07); opacity: 0.7; }
+    .trip-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 16px;
+      background: linear-gradient(transparent, rgba(10,18,36,0.92));
+    }
+    .trip-overlay h4 { font-family: Georgia, serif; font-size: 0.95rem; color: #ffffff; margin-bottom: 2px; }
+    .trip-overlay span { font-size: 12px; color: #c8b06c; display: flex; align-items: center; gap: 4px; }
+
+    .trip-difficulty {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+    .diff-easy { background: rgba(45,122,79,0.9); color: #ffffff; }
+    .diff-moderate { background: rgba(184,150,12,0.9); color: #ffffff; }
+    .diff-challenging { background: rgba(195,60,40,0.9); color: #ffffff; }
+
+    /* ── MENTORSHIP ── */
+    .mentor-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 28px;
+    }
+    .mentor-step {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      position: relative;
+      padding-bottom: 30px;
+    }
+    .mentor-step:last-child { padding-bottom: 0; }
+    .mentor-step:not(:last-child)::before {
+      content: '';
+      position: absolute;
+      left: 19px;
+      top: 44px;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(#b8960c, #e8d080);
+    }
+    .step-num {
+      width: 40px;
+      height: 40px;
+      background: #b8960c;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Georgia, serif;
+      font-size: 1rem;
+      font-weight: 900;
+      color: #ffffff;
+      flex-shrink: 0;
+      z-index: 1;
+    }
+    .step-body { padding-top: 6px; }
+    .step-body h4 { font-family: Georgia, serif; font-size: 1rem; margin-bottom: 6px; }
+    .step-body p { font-size: 14px; color: #5a6a8b; line-height: 1.7; }
+
+    /* mentor categories */
+    .mentor-cats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .mentor-cat {
+      background: #ffffff;
+      border: 1px solid #e8ecf4;
+      border-radius: 12px;
+      padding: 22px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      transition: all 0.3s;
+    }
+    .mentor-cat:hover {
+      border-color: #b8960c;
+      box-shadow: 0 10px 28px rgba(26,39,68,0.09);
+    }
+    .mc-icon {
+      font-size: 1.8rem;
+      flex-shrink: 0;
+    }
+    .mc-body h4 { font-family: Georgia, serif; font-size: 0.95rem; margin-bottom: 5px; }
+    .mc-body p { font-size: 13px; color: #5a6a8b; line-height: 1.6; }
+
+    /* ── INTERNSHIP ── */
+    .intern-benefits {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .intern-benefit {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 18px;
+      background: #f5f7fa;
+      border-radius: 10px;
+      transition: background 0.2s;
+    }
+    .intern-benefit:hover { background: #eef1f8; }
+    .ib-icon {
+      width: 36px;
+      height: 36px;
+      background: #1a2744;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .ib-body h4 { font-family: Georgia, serif; font-size: 0.9rem; margin-bottom: 3px; }
+    .ib-body p { font-size: 13px; color: #5a6a8b; line-height: 1.6; }
+
+    /* application timeline */
+    .app-timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin-top: 50px;
+      position: relative;
+    }
+    .app-timeline::before {
+      content: '';
+      position: absolute;
+      top: 24px;
+      left: 12%;
+      right: 12%;
+      height: 2px;
+      background: linear-gradient(to right, #b8960c, #e8d080, #b8960c);
+    }
+    .tl-step {
+      text-align: center;
+      position: relative;
+      padding: 0 12px;
+    }
+    .tl-dot {
+      width: 48px;
+      height: 48px;
+      background: #b8960c;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      font-family: Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: #ffffff;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 4px 14px rgba(184,150,12,0.4);
+    }
+    .tl-step h4 { font-family: Georgia, serif; font-size: 0.95rem; margin-bottom: 6px; color: #1a2744; }
+    .tl-step p { font-size: 13px; color: #5a6a8b; line-height: 1.6; }
+
+    /* ── APPLY CTA CARDS ── */
+    .apply-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 50px;
+    }
+    .apply-card {
+      background: #ffffff;
+      border: 1px solid #e8ecf4;
+      border-radius: 16px;
+      padding: 34px 28px;
+      text-align: center;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .apply-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: #b8960c;
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+    .apply-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(26,39,68,0.12);
+    }
+    .apply-card:hover::after { transform: scaleX(1); }
+    .apply-card .card-icon { font-size: 2.8rem; margin-bottom: 16px; display: block; }
+    .apply-card h3 { font-family: Georgia, serif; font-size: 1.15rem; margin-bottom: 10px; }
+    .apply-card p { font-size: 14px; color: #5a6a8b; line-height: 1.7; margin-bottom: 22px; }
+
+    /* ── CTA BAND ── */
+    .cta-band {
+      background: linear-gradient(135deg, #1a2744, #243660);
+      padding: 80px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-band::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: rgba(184,150,12,0.08);
+    }
+    .cta-band::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -40px;
+      width: 250px; height: 250px;
+      border-radius: 50%;
+      background: rgba(184,150,12,0.06);
+    }
+    .cta-band > * { position: relative; z-index: 1; }
+    .cta-band h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      color: #ffffff;
+      margin-bottom: 14px;
+    }
+    .cta-band p { color: #c8d4e8; font-size: 16px; max-width: 560px; margin: 0 auto 34px; line-height: 1.8; }
+    .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    /* ── SCROLL ANIMATIONS ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(30px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+    /* ── SCROLL TO TOP ── */
+    #scrollTop {
+      position: fixed;
+      bottom: 30px; right: 30px;
+      width: 46px; height: 46px;
+      background: #b8960c;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s;
+      border: none;
+    }
+    #scrollTop.show { opacity: 1; visibility: visible; }
+    #scrollTop:hover { background: #9a7a08; transform: translateY(-3px); }
+
+    /* ── WHATSAPP FLOAT ── */
+    .wa-float {
+      position: fixed;
+      bottom: 90px; right: 30px;
+      width: 52px; height: 52px;
+      background: #25d366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      box-shadow: 0 6px 20px rgba(37,211,102,0.4);
+      transition: transform 0.2s;
+    }
+    .wa-float:hover { transform: scale(1.1); }
+
+    /* ── FOOTER ── */
+    footer { background: #0f1c35; padding: 70px 40px 0; }
+    .footer-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 50px;
+      padding-bottom: 50px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-brand img { height: 50px; width: auto; margin-bottom: 18px; background: #ffffff; padding: 6px 10px; border-radius: 8px; }
+    .footer-brand p { font-size: 14px; color: #8a9abc; line-height: 1.8; margin-bottom: 22px; }
+    .footer-social { display: flex; gap: 10px; }
+    .footer-social a {
+      width: 38px; height: 38px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.07);
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s;
+    }
+    .footer-social a:hover { background: #b8960c; }
+    .footer-social svg { width: 16px; height: 16px; fill: #ffffff; }
+    .footer-col h4 {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #c8b06c;
+      margin-bottom: 18px;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a {
+      font-size: 14px;
+      color: #8a9abc;
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .footer-col ul li a::before { content: '›'; color: #b8960c; font-size: 16px; }
+    .footer-col ul li a:hover { color: #ffffff; }
+    .footer-contact-item { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 14px; }
+    .footer-contact-item svg { width: 15px; height: 15px; fill: #b8960c; flex-shrink: 0; margin-top: 2px; }
+    .footer-contact-item span { font-size: 14px; color: #8a9abc; line-height: 1.6; }
+    .footer-contact-item a { color: #8a9abc; transition: color 0.2s; }
+    .footer-contact-item a:hover { color: #c8b06c; }
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 0;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .footer-bottom p { font-size: 13px; color: #5a6a8b; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .csr-hero-content { grid-template-columns: 1fr; }
+      .csr-hero-right { display: none; }
+      .csr-hero { min-height: auto; padding: 100px 0 80px; }
+      .stat-inner { grid-template-columns: repeat(3, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .app-timeline { grid-template-columns: repeat(2,1fr); gap: 30px; }
+      .app-timeline::before { display: none; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .topbar-right { display: none; }
+      .section { padding: 60px 24px; }
+      .stat-strip { padding: 40px 24px; }
+      .stat-inner { grid-template-columns: repeat(2,1fr); gap: 24px; }
+      .prog-grid, .prog-grid.rev { grid-template-columns: 1fr; }
+      .prog-grid.rev .prog-visual { order: 0; }
+      .trips-gallery { grid-template-columns: 1fr 1fr; }
+      .mentor-cats { grid-template-columns: 1fr; }
+      .intern-benefits { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .hero-btns { flex-direction: column; align-items: flex-start; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+      .apply-cards { grid-template-columns: 1fr; }
+      .app-timeline { grid-template-columns: 1fr; }
+      .nav-inner { padding: 0 24px; }
+      .topbar-inner { padding: 0 24px; }
+    }
+    @media (max-width: 480px) {
+      .trips-gallery { grid-template-columns: 1fr; }
+      .criteria-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-left">
+        <a href="https://maps.google.com/?q=Akai+Plaza+3rd+Floor+Along+Thika+Road" target="_blank">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="#b8960c"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          Akai Plaza, 3rd Floor, Along Thika Road
+        </a>
+        <a href="mailto:info@jnnadvocates.co.ke">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="#b8960c"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          info@jnnadvocates.co.ke
+        </a>
+      </div>
+      <div class="topbar-right">
+        <a href="tel:+254722818932">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="#b8960c"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          +254 722 818932
+        </a>
+        <span style="color:#5a6a8b">|</span>
+        <a style="color:#c8b06c;">Mon–Fri: 8am – 4pm &nbsp;|&nbsp; Sat: 8am – 11am</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.jpg" alt="J.N & Co Advocates" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">The Firm</a></li>
+        <li>
+          <a href="practice-areas.html">Practice Areas ▾</a>
+          <ul class="dropdown">
+            <li><a href="practice-areas.html#employment">Employment Law</a></li>
+            <li><a href="practice-areas.html#competition">Competition Law</a></li>
+            <li><a href="practice-areas.html#realestate">Real Estate &amp; Conveyancing</a></li>
+            <li><a href="practice-areas.html#ip">Intellectual Property Law</a></li>
+            <li><a href="practice-areas.html#litigation">Litigation &amp; Dispute Resolution</a></li>
+            <li><a href="practice-areas.html#commercial">Commercial Law</a></li>
+            <li><a href="practice-areas.html#family">Family Law</a></li>
+            <li><a href="practice-areas.html#corporate">Corporate &amp; Company Secretarial</a></li>
+          </ul>
+        </li>
+        <li><a href="team.html">Team</a></li>
+        <li>
+          <a href="CSR.html" class="active">CSR ▾</a>
+          <ul class="dropdown">
+            <li><a href="CSR.html#scholarship">Scholarship</a></li>
+            <li><a href="CSR.html#football">Football Academy</a></li>
+            <li><a href="CSR.html#hikes">Hikes & Trips</a></li>
+            <li><a href="CSR.html#mentorship">Mentorship Programs</a></li>
+            <li><a href="CSR.html#internships">Internships</a></li>
+          </ul>
+        </li>
+        <li><a href="AI-Counsel.html">Ai</a></li>
+        <li><a href="contact.html" class="nav-cta">Book Appointment</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="about.html">The Firm</a>
+      <a href="practice-areas.html">Practice Areas</a>
+      <a href="practice-areas.html#employment" class="sub">Employment Law</a>
+      <a href="practice-areas.html#competition" class="sub">Competition Law</a>
+      <a href="practice-areas.html#realestate" class="sub">Real Estate & Conveyancing</a>
+      <a href="practice-areas.html#ip" class="sub">Intellectual Property</a>
+      <a href="practice-areas.html#litigation" class="sub">Litigation & Dispute Resolution</a>
+      <a href="practice-areas.html#commercial" class="sub">Commercial Law</a>
+      <a href="practice-areas.html#family" class="sub">Family Law</a>
+      <a href="practice-areas.html#corporate" class="sub">Corporate & Secretarial</a>
+      <a href="team.html">Team</a>
+      <a href="CSR.html">CSR</a>
+      <a href="CSR.html#scholarship" class="sub">Scholarship</a>
+      <a href="CSR.html#football" class="sub">Football Academy</a>
+      <a href="CSR.html#hikes" class="sub">Hikes & Trips</a>
+      <a href="CSR.html#mentorship" class="sub">Mentorship Programs</a>
+      <a href="CSR.html#internships" class="sub">Internships</a>
+      <a href="AI-Counsel.html">Ai</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="contact.html" style="background:#b8960c;color:#fff;font-weight:700;">Book Appointment</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="csr-hero">
+    <div class="csr-hero-overlay"></div>
+    <canvas id="csrCanvas"></canvas>
+    <div class="csr-hero-content">
+      <div class="csr-hero-left">
+        <p class="eyebrow">Corporate Social Responsibility</p>
+        <h1>Law That Serves <em>Beyond</em> the Courtroom</h1>
+        <p>At J.N & Co Advocates, we believe access to justice begins with community investment. Through education, sport, mentorship, adventure, and opportunity — we are shaping a stronger Kenya.</p>
+        <div class="hero-btns">
+          <a href="#scholarship" class="btn btn-gold">Our CSR Programs</a>
+          <a href="contact.html" class="btn btn-outline">Get Involved</a>
+        </div>
+      </div>
+      <div class="csr-hero-right">
+        <div class="impact-tile">
+          <span class="tile-icon">🎓</span>
+          <h4>Scholarship</h4>
+          <p>Supporting bright minds who need a financial bridge to higher education</p>
+        </div>
+        <div class="impact-tile">
+          <span class="tile-icon">⚽</span>
+          <h4>Football Academy</h4>
+          <p>Nurturing young talent and discipline through the beautiful game</p>
+        </div>
+        <div class="impact-tile">
+          <span class="tile-icon">🥾</span>
+          <h4>Hikes &amp; Trips</h4>
+          <p>Building wellness, resilience and team spirit in Kenya's great outdoors</p>
+        </div>
+        <div class="impact-tile">
+          <span class="tile-icon">💼</span>
+          <h4>Internships</h4>
+          <p>Opening doors for aspiring legal professionals across Kenya</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAT STRIP -->
+  <div class="stat-strip">
+    <div class="stat-inner">
+      <div class="stat-item reveal">
+        <div class="num" data-target="45" data-suffix="+">0+</div>
+        <div class="lbl">Scholars Supported</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="num" data-target="80" data-suffix="+">0+</div>
+        <div class="lbl">Academy Players</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="num" data-target="30" data-suffix="+">0+</div>
+        <div class="lbl">Hikes &amp; Trips Held</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="num" data-target="120" data-suffix="+">0+</div>
+        <div class="lbl">Mentees Guided</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="num" data-target="60" data-suffix="+">0+</div>
+        <div class="lbl">Interns Trained</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROGRAM TABS -->
+  <div class="prog-tabs">
+    <div class="prog-tabs-inner">
+      <a href="#scholarship">🎓 Scholarship</a>
+      <a href="#football">⚽ Football Academy</a>
+      <a href="#hikes">🥾 Hikes &amp; Trips</a>
+      <a href="#mentorship">🤝 Mentorship Programs</a>
+      <a href="#internships">💼 Internships</a>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       01. SCHOLARSHIP
+  ════════════════════════════════════════ -->
+  <section class="section" id="scholarship">
+    <div class="container">
+      <div class="prog-grid">
+        <div class="prog-text reveal-left">
+          <span class="section-label">Program 01</span>
+          <h2 class="section-title">J.N & Co Advocates Scholarship Fund</h2>
+          <p style="color:#3a4a6b;line-height:1.85;margin-bottom:16px;">We believe that financial hardship should never stand between a brilliant young Kenyan and a quality education. The J.N. Scholarship Fund was established to bridge that gap — offering deserving students from underprivileged backgrounds the opportunity to pursue tertiary education, with a special focus on law, business, and social sciences.</p>
+          <p style="color:#3a4a6b;line-height:1.85;margin-bottom:24px;">Each year, J.N & Co Advocates awards scholarships that cover tuition, study materials, and mentorship support — ensuring recipients don't just enrol, but thrive.</p>
+          <div class="highlights">
+            <div class="highlight-item">
+              <div class="hi-icon">📚</div>
+              <div class="hi-body">
+                <h4>Full &amp; Partial Tuition Bursaries</h4>
+                <p>Scholarships awarded on a full or partial basis depending on financial need and academic merit.</p>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <div class="hi-icon">👩‍⚖️</div>
+              <div class="hi-body">
+                <h4>Focus on Law &amp; Related Disciplines</h4>
+                <p>Priority given to students pursuing law, governance, business, and social sciences at Kenyan universities.</p>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <div class="hi-icon">🧑‍💼</div>
+              <div class="hi-body">
+                <h4>Ongoing Mentorship &amp; Support</h4>
+                <p>Scholars are paired with advocates from the firm who provide academic and career guidance throughout their studies.</p>
+              </div>
+            </div>
+          </div>
+          <a href="contact.html" class="btn btn-gold" style="margin-top:8px;">Apply for a Scholarship</a>
+        </div>
+        <div class="prog-visual reveal-right">
+          <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80" alt="J.N & Co Advocates Scholarship – Students studying" />
+          <div class="prog-badge">
+            <strong>45+</strong>
+            <span>Scholars Supported</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Eligibility -->
+      <div style="margin-top:60px;" class="reveal">
+        <h3 style="font-family:Georgia,serif;font-size:1.4rem;margin-bottom:8px;">Eligibility Criteria</h3>
+        <p style="color:#5a6a8b;font-size:15px;margin-bottom:28px;">The J.N. Scholarship Fund is open to Kenyan citizens who meet the following criteria:</p>
+        <div class="criteria-grid">
+          <div class="criteria-card">
+            <span class="cc-icon">🇰🇪</span>
+            <h4>Kenyan Citizen</h4>
+            <p>Open to all Kenyan citizens with a valid national ID or birth certificate.</p>
+          </div>
+          <div class="criteria-card">
+            <span class="cc-icon">🏫</span>
+            <h4>Tertiary Enrolment</h4>
+            <p>Admitted to or currently enrolled at a recognised Kenyan university or college.</p>
+          </div>
+          <div class="criteria-card">
+            <span class="cc-icon">📊</span>
+            <h4>Academic Merit</h4>
+            <p>Demonstrated academic performance — minimum B plain (KCSE) or equivalent.</p>
+          </div>
+          <div class="criteria-card">
+            <span class="cc-icon">💰</span>
+            <h4>Financial Need</h4>
+            <p>From a household that cannot fully finance tertiary education independently.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       02. FOOTBALL ACADEMY
+  ════════════════════════════════════════ -->
+  <section class="section section-alt" id="football">
+    <div class="container">
+      <div class="prog-grid rev">
+        <div class="prog-text reveal-right">
+          <span class="section-label">Program 02</span>
+          <h2 class="section-title">J.N & Co Advocates Football Academy</h2>
+          <p style="color:#3a4a6b;line-height:1.85;margin-bottom:16px;">Football is Kenya's most universal language. The J.N & Co Advocates Football Academy was born from our belief that sport builds character, discipline, teamwork, and resilience — qualities that make great lawyers and great citizens alike.</p>
+          <p style="color:#3a4a6b;line-height:1.85;margin-bottom:24px;">We recruit talented young players from Kiambu County and surrounding areas, providing professional coaching, kit, nutritional guidance, and a structured pathway to competitive football at regional and national level.</p>
+
+          <div class="highlights">
+            <div class="highlight-item">
+              <div class="hi-icon">🧑‍🏫</div>
+              <div class="hi-body">
+                <h4>Professional Coaching Staff</h4>
+                <p>Certified CAF coaches lead structured training sessions three times a week throughout the calendar year.</p>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <div class="hi-icon">🏆</div>
+              <div class="hi-body">
+                <h4>Competitive League Participation</h4>
+                <p>Our teams compete in Kiambu County leagues, inter-firm tournaments, and regional cup competitions.</p>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <div class="hi-icon">📖</div>
+              <div class="hi-body">
+                <h4>Academics First Policy</h4>
+                <p>All academy players must maintain school attendance and satisfactory academic performance as a non-negotiable requirement.</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:20px;">
+            <p style="font-size:13px;font-weight:700;color:#b8960c;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;">Open Positions</p>
+            <div class="team-positions">
+              <span class="position-tag">Goalkeeper</span>
+              <span class="position-tag">Centre Back</span>
+              <span class="position-tag">Full Back</span>
+              <span class="position-tag">Defensive Mid</span>
+              <span class="position-tag">Attacking Mid</span>
+              <span class="position-tag">Winger</span>
+              <span class="position-tag">Striker</span>
+            </div>
+          </div>
+
+          <!-- Results Ticker -->
+          <div class="results-ticker">
+            <h4>Recent Results</h4>
+            <div class="result-row">
+              <span class="teams">J.N & Co Advocates FC vs Ridgeways United</span>
+              <span class="score">3 – 1</span>
+              <span class="result-label win">WIN</span>
+            </div>
+            <div class="result-row">
+              <span class="teams">J.N & Co Advocates FC vs Kiambu Rovers</span>
+              <span class="score">2 – 2</span>
+              <span class="result-label draw">DRAW</span>
+            </div>
+            <div class="result-row">
+              <span class="teams">J.N & Co Advocates FC vs Thindigua Stars</span>
+              <span class="score">4 – 0</span>
+              <span class="result-label win">WIN</span>
+            </div>
+          </div>
+
+          <a href="contact.html" class="btn btn-gold" style="margin-top:24px;">Join the Academy</a>
+        </div>
+        <div class="prog-visual reveal-left">
+          <img src="https://images.unsplash.com/photo-1529900748604-07564a03e7a6?w=800&q=80" alt="J.N & Co Advocates Football Academy – players training" />
+          <div class="prog-badge">
+            <strong>80+</strong>
+            <span>Active Players</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       03. HIKES & TRIPS
+  ════════════════════════════════════════ -->
+  <section class="section" id="hikes">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">Program 03</span>
+        <h2 class="section-title">Hikes &amp; Outdoor Trips</h2>
+        <p class="section-desc">Adventure builds bonds. We organise regular hikes, nature excursions, and community trips for our staff, interns, scholars, and community partners — exploring Kenya's extraordinary landscapes together.</p>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="trips-gallery">
+        <div class="trip-card reveal">
+          <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&q=80" alt="Mount Kenya Hike" />
+          <span class="trip-difficulty diff-challenging">Challenging</span>
+          <div class="trip-overlay">
+            <h4>Mount Kenya Day Hike</h4>
+            <span>🗻 Naro Moru Route · 22km</span>
+          </div>
+        </div>
+        <div class="trip-card reveal">
+          <img src="images/aba.jpg" alt="Aberdares Forest Walk" />
+          <span class="trip-difficulty diff-moderate">Moderate</span>
+          <div class="trip-overlay">
+            <h4>Aberdares Forest Walk</h4>
+            <span>🌿 Nyeri · 12km trail</span>
+          </div>
+        </div>
+        <div class="trip-card reveal">
+          <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&q=80" alt="Ngong Hills Team Hike" />
+          <span class="trip-difficulty diff-easy">Easy</span>
+          <div class="trip-overlay">
+            <h4>Ngong Hills Team Hike</h4>
+            <span>⛰ Kajiado · 8km circuit</span>
+          </div>
+        </div>
+        <div class="trip-card reveal">
+          <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=600&q=80" alt="Maasai Mara Community Visit" />
+          <span class="trip-difficulty diff-easy">Easy</span>
+          <div class="trip-overlay">
+            <h4>Maasai Mara Community Visit</h4>
+            <span>🦁 Narok · 2-Day Trip</span>
+          </div>
+        </div>
+        <div class="trip-card reveal">
+          <img src="images/karura.jpg" alt="Karura Forest Morning Walk" />
+          <span class="trip-difficulty diff-easy">Easy</span>
+          <div class="trip-overlay">
+            <h4>Karura Forest Morning Walk</h4>
+            <span>🌳 Nairobi · 5km loop</span>
+          </div>
+        </div>
+        <div class="trip-card reveal">
+          <img src="images/Hells-Gate-National-Park.jpg" alt="Hell's Gate Cycling Trip" />
+          <span class="trip-difficulty diff-moderate">Moderate</span>
+          <div class="trip-overlay">
+            <h4>Hell's Gate Cycling Trip</h4>
+            <span>🚴 Naivasha · 22km cycle</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Upcoming -->
+      <div style="margin-top:60px;background:#f5f7fa;border-radius:16px;padding:40px;" class="reveal">
+        <h3 style="font-family:Georgia,serif;font-size:1.3rem;margin-bottom:6px;">Upcoming Trips – 2026</h3>
+        <p style="font-size:14px;color:#5a6a8b;margin-bottom:28px;">Open to staff, scholars, interns, and community members. Limited places available — register early.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;">
+          <div style="background:#ffffff;border-radius:10px;padding:20px;border:1px solid #e0e6f0;">
+            <span style="font-size:11px;font-weight:700;color:#b8960c;letter-spacing:1.5px;text-transform:uppercase;">July 2026</span>
+            <h4 style="font-family:Georgia,serif;font-size:1rem;margin:6px 0 6px;">Longonot Crater Hike</h4>
+            <p style="font-size:13px;color:#5a6a8b;">Mt. Longonot National Park · Full-day crater rim walk · 9km</p>
+          </div>
+          <div style="background:#ffffff;border-radius:10px;padding:20px;border:1px solid #e0e6f0;">
+            <span style="font-size:11px;font-weight:700;color:#b8960c;letter-spacing:1.5px;text-transform:uppercase;">September 2026</span>
+            <h4 style="font-family:Georgia,serif;font-size:1rem;margin:6px 0 6px;">Lake Nakuru Day Trip</h4>
+            <p style="font-size:13px;color:#5a6a8b;">Lake Nakuru National Park · Wildlife &amp; nature walk · Community visit</p>
+          </div>
+          <div style="background:#ffffff;border-radius:10px;padding:20px;border:1px solid #e0e6f0;">
+            <span style="font-size:11px;font-weight:700;color:#b8960c;letter-spacing:1.5px;text-transform:uppercase;">November 2026</span>
+            <h4 style="font-family:Georgia,serif;font-size:1rem;margin:6px 0 6px;">Chyulu Hills Expedition</h4>
+            <p style="font-size:13px;color:#5a6a8b;">Chyulu Hills · 3-Day trek · Advanced participants only</p>
+          </div>
+        </div>
+        <div style="margin-top:24px;">
+          <a href="contact.html" class="btn btn-gold">Register for a Trip</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       04. MENTORSHIP PROGRAMS
+  ════════════════════════════════════════ -->
+  <section class="section section-alt" id="mentorship">
+    <div class="container">
+      <div class="prog-grid">
+        <div class="prog-text reveal-left">
+          <span class="section-label">Program 04</span>
+          <h2 class="section-title">J.N & Co Advocates Mentorship Programs</h2>
+          <p style="color:#3a4a6b;line-height:1.85;margin-bottom:16px;">The law can be a transformative career — but navigating its pathways without guidance can feel overwhelming, especially for young people from disadvantaged backgrounds. Our mentorship programme connects aspiring legal professionals, law students, and young graduates with experienced advocates and business leaders from within the J.N & Co Advocates network.</p>
+          <p style="color:#3a4a6b;line-height:1.85;margin-bottom:28px;">Mentees receive structured one-on-one sessions, career planning support, practical skills development, and access to our professional network — laying a strong foundation for a successful career in law or governance.</p>
+
+          <!-- Mentorship Journey -->
+          <h3 style="font-family:Georgia,serif;font-size:1.1rem;margin-bottom:18px;">The Mentorship Journey</h3>
+          <div class="mentor-steps">
+            <div class="mentor-step">
+              <div class="step-num">1</div>
+              <div class="step-body">
+                <h4>Application &amp; Matching</h4>
+                <p>Applicants complete a short profile. Our team matches each mentee with the most suitable mentor based on career goals and practice area interest.</p>
+              </div>
+            </div>
+            <div class="mentor-step">
+              <div class="step-num">2</div>
+              <div class="step-body">
+                <h4>Orientation &amp; Goal Setting</h4>
+                <p>Mentor and mentee meet to build rapport, align expectations, and set clear, measurable goals for the programme duration.</p>
+              </div>
+            </div>
+            <div class="mentor-step">
+              <div class="step-num">3</div>
+              <div class="step-body">
+                <h4>Monthly Structured Sessions</h4>
+                <p>Monthly one-on-one sessions covering career development, practical legal skills, professional conduct, and industry insight.</p>
+              </div>
+            </div>
+            <div class="mentor-step">
+              <div class="step-num">4</div>
+              <div class="step-body">
+                <h4>Network Events &amp; Exposure</h4>
+                <p>Mentees are invited to J.N & Co Advocates legal events, court observation sessions, and professional development workshops.</p>
+              </div>
+            </div>
+            <div class="mentor-step">
+              <div class="step-num">5</div>
+              <div class="step-body">
+                <h4>Graduation &amp; Alumni Network</h4>
+                <p>Successful mentees graduate into our alumni community, continuing to receive support and opportunities from the J.N & Co Advocates network.</p>
+              </div>
+            </div>
+          </div>
+          <a href="contact.html" class="btn btn-gold" style="margin-top:28px;">Apply for Mentorship</a>
+        </div>
+
+        <div class="reveal-right">
+          <img src="https://images.unsplash.com/photo-1565728744382-61accd4aa148?w=800&q=80" alt="J.N & Co Advocates Mentorship Program" style="width:100%;height:340px;object-fit:cover;border-radius:16px;margin-bottom:28px;" />
+
+          <h3 style="font-family:Georgia,serif;font-size:1.1rem;margin-bottom:16px;">Mentorship Categories</h3>
+          <div class="mentor-cats">
+            <div class="mentor-cat">
+              <div class="mc-icon">⚖️</div>
+              <div class="mc-body">
+                <h4>Legal Career Mentorship</h4>
+                <p>For law students and recent graduates targeting a career at the Bar.</p>
+              </div>
+            </div>
+            <div class="mentor-cat">
+              <div class="mc-icon">🏢</div>
+              <div class="mc-body">
+                <h4>Corporate Governance</h4>
+                <p>For students of business and governance pursuing company secretarial roles.</p>
+              </div>
+            </div>
+            <div class="mentor-cat">
+              <div class="mc-icon">💡</div>
+              <div class="mc-body">
+                <h4>Entrepreneurship &amp; Law</h4>
+                <p>For young entrepreneurs seeking legal knowledge to grow their ventures.</p>
+              </div>
+            </div>
+            <div class="mentor-cat">
+              <div class="mc-icon">🌍</div>
+              <div class="mc-body">
+                <h4>Community Leadership</h4>
+                <p>For community change-makers seeking to understand rights, policy, and advocacy.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       05. INTERNSHIPS
+  ════════════════════════════════════════ -->
+  <section class="section" id="internships">
+    <div class="container">
+      <div class="prog-grid rev">
+        <div class="prog-text reveal-right">
+          <span class="section-label">Program 05</span>
+          <h2 class="section-title">Legal Internship Programme</h2>
+          <p style="color:#3a4a6b;line-height:1.85;margin-bottom:16px;">Our internship programme is one of the most practical ways we invest in Kenya's next generation of lawyers. J.N & Co Advocates welcomes law students, pupillage candidates, and company secretarial students for structured, hands-on internships that provide real exposure to legal practice.</p>
+          <p style="color:#3a4a6b;line-height:1.85;margin-bottom:24px;">Interns at J.N & Co Advocates work directly alongside our advocates — attending court, drafting documents, conducting research, sitting in on client consultations (where permitted), and participating in firm meetings. This is not a filing-and-photocopying placement; it is genuine legal experience under qualified supervision.</p>
+
+          <h3 style="font-family:Georgia,serif;font-size:1.1rem;margin-bottom:16px;">What You'll Gain</h3>
+          <div class="intern-benefits">
+            <div class="intern-benefit">
+              <div class="ib-icon">🏛</div>
+              <div class="ib-body">
+                <h4>Court Attendance</h4>
+                <p>Observe real proceedings in Kiambu and Nairobi courts alongside our advocates.</p>
+              </div>
+            </div>
+            <div class="intern-benefit">
+              <div class="ib-icon">📝</div>
+              <div class="ib-body">
+                <h4>Legal Drafting Practice</h4>
+                <p>Draft pleadings, contracts, correspondence, and research memoranda under supervision.</p>
+              </div>
+            </div>
+            <div class="intern-benefit">
+              <div class="ib-icon">🔍</div>
+              <div class="ib-body">
+                <h4>Legal Research</h4>
+                <p>Conduct in-depth legal research across our eight practice areas using Kenyan and comparative law.</p>
+              </div>
+            </div>
+            <div class="intern-benefit">
+              <div class="ib-icon">🤝</div>
+              <div class="ib-body">
+                <h4>Client &amp; Office Experience</h4>
+                <p>Observe client meetings, file management, billing, and the operations of a professional law firm.</p>
+              </div>
+            </div>
+            <div class="intern-benefit">
+              <div class="ib-icon">📜</div>
+              <div class="ib-body">
+                <h4>Internship Certificate</h4>
+                <p>All interns receive an official J.N Advocates internship completion certificate on exit.</p>
+              </div>
+            </div>
+            <div class="intern-benefit">
+              <div class="ib-icon">🌐</div>
+              <div class="ib-body">
+                <h4>Professional Network</h4>
+                <p>Build a real network of advocates, mentors, and peers in the Nairobi legal community.</p>
+              </div>
+            </div>
+          </div>
+          <a href="contact.html" class="btn btn-gold" style="margin-top:28px;">Apply for an Internship</a>
+        </div>
+        <div class="prog-visual reveal-left">
+          <img src="images/int.jpg" alt="J.N Legal Internship Programme" />
+          <div class="prog-badge">
+            <strong>60+</strong>
+            <span>Interns Trained</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Application Timeline -->
+      <div style="margin-top:70px;" class="reveal">
+        <div class="text-center" style="margin-bottom:50px;">
+          <span class="section-label">How to Apply</span>
+          <h3 style="font-family:Georgia,serif;font-size:1.5rem;">The Application Process</h3>
+        </div>
+        <div class="app-timeline">
+          <div class="tl-step">
+            <div class="tl-dot">1</div>
+            <h4>Submit Application</h4>
+            <p>Send your CV, cover letter, and a copy of your university transcript or law school enrolment letter to info@jnnadvocates.co.ke</p>
+          </div>
+          <div class="tl-step">
+            <div class="tl-dot">2</div>
+            <h4>Shortlisting</h4>
+            <p>Our team reviews applications and shortlisted candidates are contacted within 10 working days for an interview.</p>
+          </div>
+          <div class="tl-step">
+            <div class="tl-dot">3</div>
+            <h4>Interview</h4>
+            <p>A brief interview (in-person or virtual) with one of our partners to assess fit, motivation, and scheduling availability.</p>
+          </div>
+          <div class="tl-step">
+            <div class="tl-dot">4</div>
+            <h4>Offer &amp; Induction</h4>
+            <p>Successful candidates receive an offer letter and attend a firm induction before commencing their placement.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Intake Periods -->
+      <div style="background:#f5f7fa;border-radius:16px;padding:40px;margin-top:50px;" class="reveal">
+        <h3 style="font-family:Georgia,serif;font-size:1.2rem;margin-bottom:20px;">2026 Internship Intake Periods</h3>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;">
+          <div style="background:#ffffff;border-radius:10px;padding:20px;border:1px solid #e0e6f0;text-align:center;">
+            <div style="font-size:1.8rem;margin-bottom:8px;">🌱</div>
+            <h4 style="font-family:Georgia,serif;font-size:1rem;margin-bottom:4px;color:#1a2744;">January Intake</h4>
+            <p style="font-size:13px;color:#5a6a8b;">Applications open: November 2025<br />Duration: 8 weeks</p>
+          </div>
+          <div style="background:#ffffff;border-radius:10px;padding:20px;border:1px solid #e0e6f0;text-align:center;">
+            <div style="font-size:1.8rem;margin-bottom:8px;">☀️</div>
+            <h4 style="font-family:Georgia,serif;font-size:1rem;margin-bottom:4px;color:#1a2744;">May Intake</h4>
+            <p style="font-size:13px;color:#5a6a8b;">Applications open: March 2026<br />Duration: 8 weeks</p>
+          </div>
+          <div style="background:#ffffff;border-radius:10px;padding:20px;border:1px solid #e0e6f0;text-align:center;">
+            <div style="font-size:1.8rem;margin-bottom:8px;">🍂</div>
+            <h4 style="font-family:Georgia,serif;font-size:1rem;margin-bottom:4px;color:#1a2744;">September Intake</h4>
+            <p style="font-size:13px;color:#5a6a8b;">Applications open: July 2026<br />Duration: 8 weeks</p>
+          </div>
+          <div style="background:#ffffff;border-radius:10px;padding:20px;border:1px solid #e0e6f0;text-align:center;">
+            <div style="font-size:1.8rem;margin-bottom:8px;">❄️</div>
+            <h4 style="font-family:Georgia,serif;font-size:1rem;margin-bottom:4px;color:#1a2744;">December Intake</h4>
+            <p style="font-size:13px;color:#5a6a8b;">Applications open: October 2026<br />Duration: 6 weeks</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLY OVERVIEW CARDS -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">Get Involved</span>
+        <h2 class="section-title">Every Program. One Application.</h2>
+        <p class="section-desc">Ready to be part of the J.N & Co Advocates community? All five CSR programs are open for applications year-round. Find the right fit for you.</p>
+      </div>
+      <div class="apply-cards">
+        <div class="apply-card reveal">
+          <span class="card-icon">🎓</span>
+          <h3>Scholarship</h3>
+          <p>Financial support for academically gifted Kenyan students pursuing higher education.</p>
+          <a href="contact.html" class="btn btn-outline-gold">Apply Now</a>
+        </div>
+        <div class="apply-card reveal">
+          <span class="card-icon">⚽</span>
+          <h3>Football Academy</h3>
+          <p>Open trials for talented young players aged 13–21 in Kiambu and Nairobi counties.</p>
+          <a href="contact.html" class="btn btn-outline-gold">Apply Now</a>
+        </div>
+        <div class="apply-card reveal">
+          <span class="card-icon">🥾</span>
+          <h3>Hikes &amp; Trips</h3>
+          <p>Register for our next outdoor adventure — open to the J.N & Co Advocates community and beyond.</p>
+          <a href="contact.html" class="btn btn-outline-gold">Register</a>
+        </div>
+        <div class="apply-card reveal">
+          <span class="card-icon">🤝</span>
+          <h3>Mentorship</h3>
+          <p>Apply as a mentee or volunteer as a mentor in our structured legal mentorship programme.</p>
+          <a href="contact.html" class="btn btn-outline-gold">Apply Now</a>
+        </div>
+        <div class="apply-card reveal">
+          <span class="card-icon">💼</span>
+          <h3>Internship</h3>
+          <p>Submit your CV for our next internship intake and gain real-world legal experience.</p>
+          <a href="contact.html" class="btn btn-outline-gold">Apply Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <div class="cta-band">
+    <h2 class="reveal">Want to Support Our CSR Initiatives?</h2>
+    <p class="reveal">Whether you are a sponsor, partner organisation, or individual who shares our vision for a more just and empowered Kenya — we would love to hear from you.</p>
+    <div class="cta-buttons reveal">
+      <a href="contact.html" class="btn btn-gold">Get in Touch</a>
+      <a href="tel:+254722818932" class="btn btn-outline">Call +254 722 818932</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/logo.jpg" alt="J.N & Co Advocates" />
+        <p>A trusted full-service law firm along Thika Road offering practical, results-driven legal solutions to individuals, businesses, and institutions across Kenya.</p>
+        <div class="footer-social">
+          <a href="mailto:info@jnnadvocates.co.ke" title="Email">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </a>
+          <a href="tel:+254722818932" title="Call">
+            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          </a>
+          <a href="https://wa.me/254722818932" title="WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.139.566 4.147 1.547 5.886L0 24l6.293-1.528C8.012 23.459 9.968 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.658-.498-5.189-1.367l-.371-.219-3.839.932.977-3.727-.24-.386C2.55 15.556 2 13.839 2 12 2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">The Firm</a></li>
+          <li><a href="practice-areas.html">Practice Areas</a></li>
+          <li><a href="team.html">Our Team</a></li>
+          <li><a href="CSR.html">CSR</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>CSR Programs</h4>
+      <ul>
+            <li><a href="#scholarship">Scholarship</a></li>
+            <li><a href="#football">Football Academy</a></li>
+            <li><a href="#hikes">Hikes &amp; Trips</a></li>
+            <li><a href="#mentorship">Mentorship Programs</a></li>
+            <li><a href="#internships">Internships</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            <span>Akai Plaza, 3rd Floor, Along Thika Road, Nairobi</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            <span><a href="tel:+254722818932">+254 722 818932</a></span>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <span><a href="mailto:info@jnnadvocates.co.ke">info@jnnadvocates.co.ke</a></span>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+            <span>Mon–Fri: 8:00am – 4:00pm<br />Saturday: 8:00am – 11:00am</span>
+          </div>
+        </div>
+      </div>
+    <div class="footer-bottom">
+      <p>© 2026 J.N & Co Advocates. All rights reserved.</p>
+      <p>P.O Box 64858 – 00620, Nairobi, Kenya</p>
+    </div>
+  </footer>
+
+  <!-- SCROLL TO TOP -->
+  <button id="scrollTop" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="#ffffff"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+  </button>
+
+  <!-- WHATSAPP FLOAT -->
+  <a class="wa-float" href="https://wa.me/254722818932" target="_blank" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.139.566 4.147 1.547 5.886L0 24l6.293-1.528C8.012 23.459 9.968 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.658-.498-5.189-1.367l-.371-.219-3.839.932.977-3.727-.24-.386C2.55 15.556 2 13.839 2 12 2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+  </a>
+
+  <script>
+    /* ============================================================
+       J.N & Co Advocates CSR PAGE – INLINE JAVASCRIPT
+    ============================================================ */
+
+    document.addEventListener('DOMContentLoaded', function () {
+
+      /* ── NAVBAR SCROLL ── */
+      const navbar = document.getElementById('navbar');
+      const scrollTopBtn = document.getElementById('scrollTop');
+      let lastScroll = 0;
+      const topbar = document.querySelector('.topbar');
+
+      window.addEventListener('scroll', function () {
+        const current = window.scrollY;
+
+        if (current > 60) {
+          navbar.classList.add('scrolled');
+          scrollTopBtn.classList.add('show');
+        } else {
+          navbar.classList.remove('scrolled');
+          scrollTopBtn.classList.remove('show');
+        }
+
+        // hide topbar on scroll down
+        if (topbar) {
+          if (current > 100 && current > lastScroll) {
+            topbar.style.marginTop = '-' + topbar.offsetHeight + 'px';
+            topbar.style.transition = 'margin-top 0.3s ease';
+          } else {
+            topbar.style.marginTop = '0';
+          }
+        }
+        lastScroll = current;
+      });
+
+      /* ── SCROLL TO TOP ── */
+      scrollTopBtn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      /* ── HAMBURGER ── */
+      const hamburger = document.getElementById('hamburger');
+      const mobileMenu = document.getElementById('mobileMenu');
+
+      hamburger.addEventListener('click', function () {
+        hamburger.classList.toggle('open');
+        mobileMenu.classList.toggle('open');
+      });
+
+      mobileMenu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          hamburger.classList.remove('open');
+          mobileMenu.classList.remove('open');
+        });
+      });
+
+      /* ── SCROLL REVEAL ── */
+      const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+      const revealObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      revealEls.forEach(function (el) { revealObserver.observe(el); });
+
+      /* ── COUNTER ANIMATION ── */
+      function animateCounter(el, target, duration) {
+        let start = 0;
+        const step = Math.ceil(target / (duration / 16));
+        const timer = setInterval(function () {
+          start += step;
+          if (start >= target) {
+            el.textContent = target + (el.dataset.suffix || '');
+            clearInterval(timer);
+          } else {
+            el.textContent = start + (el.dataset.suffix || '');
+          }
+        }, 16);
+      }
+
+      const counters = document.querySelectorAll('.num[data-target]');
+      const counterObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            animateCounter(el, parseInt(el.dataset.target), 1200);
+            counterObserver.unobserve(el);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      counters.forEach(function (c) { counterObserver.observe(c); });
+
+      /* ── HERO CANVAS PARTICLES ── */
+      const canvas = document.getElementById('csrCanvas');
+      if (canvas) {
+        const ctx = canvas.getContext('2d');
+        function resizeCanvas() {
+          canvas.width = canvas.offsetWidth;
+          canvas.height = canvas.offsetHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        const particles = [];
+        for (let i = 0; i < 60; i++) {
+          particles.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            r: Math.random() * 1.8 + 0.3,
+            dx: (Math.random() - 0.5) * 0.45,
+            dy: (Math.random() - 0.5) * 0.45,
+            alpha: Math.random() * 0.5 + 0.1
+          });
+        }
+
+        function drawParticles() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          particles.forEach(function (p) {
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(184,150,12,' + p.alpha + ')';
+            ctx.fill();
+            p.x += p.dx;
+            p.y += p.dy;
+            if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+            if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+          });
+          requestAnimationFrame(drawParticles);
+        }
+        drawParticles();
+      }
+
+      /* ── ACTIVE TAB HIGHLIGHT ON SCROLL ── */
+      const sections = ['scholarship', 'football', 'hikes', 'mentorship', 'internships'];
+      const tabLinks = document.querySelectorAll('.prog-tabs-inner a');
+
+      window.addEventListener('scroll', function () {
+        let current = '';
+        sections.forEach(function (id) {
+          const section = document.getElementById(id);
+          if (section) {
+            const rect = section.getBoundingClientRect();
+            if (rect.top <= 160) current = id;
+          }
+        });
+        tabLinks.forEach(function (link) {
+          link.style.color = '#3a4a6b';
+          link.style.borderBottomColor = 'transparent';
+          if (link.getAttribute('href') === '#' + current) {
+            link.style.color = '#b8960c';
+            link.style.borderBottomColor = '#b8960c';
+          }
+        });
+      });
+
+      /* ── TRIP CARD HOVER TILT ── */
+      document.querySelectorAll('.trip-card').forEach(function (card) {
+        card.addEventListener('mousemove', function (e) {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+          card.style.transform = 'scale(1.02) rotateX(' + (-y / 25) + 'deg) rotateY(' + (x / 25) + 'deg)';
+          card.style.transition = 'transform 0.1s ease';
+        });
+        card.addEventListener('mouseleave', function () {
+          card.style.transform = '';
+          card.style.transition = 'transform 0.4s ease';
+        });
+      });
+
+      /* ── APPLY CARD LIFT ── */
+      document.querySelectorAll('.apply-card').forEach(function (card) {
+        card.addEventListener('mouseenter', function () {
+          card.style.transition = 'all 0.3s ease';
+        });
+      });
+
+    }); // end DOMContentLoaded
+  </script>
+</body>
+</html>
