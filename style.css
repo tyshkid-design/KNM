@@ -106,11 +106,12 @@ a {
 }
 
 .nav-logo img {
-  height: 52px;
+  height: 60px;
   width: auto;
   background: #1a2744;
-  padding: 6px 10px;
+  padding: 4px 8px;
   border-radius: 8px;
+  display: block;
 }
 
 .nav-links {
@@ -959,11 +960,11 @@ footer {
 }
 
 .footer-brand img {
-  height: 50px;
+  height: 56px;
   width: auto;
   margin-bottom: 18px;
   background: #ffffff;
-  padding: 6px 10px;
+  padding: 4px 8px;
   border-radius: 8px;
 }
 
